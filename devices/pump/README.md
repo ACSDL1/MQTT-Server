@@ -86,6 +86,51 @@ pumps.disconnect()
 
 See [Python API Documentation](../iot_mqtt/README.md) for complete usage examples.
 
+## Diagnostics
+
+### I²C Address Scanner
+
+**Sketch**: `Pump_Qwiic_I2C_Scanner.ino`
+
+**Purpose**: Scans the I²C bus for all connected SparkFun Qwiic devices and reports their I²C addresses. Essential for verifying relay addresses and troubleshooting connection issues.
+
+**Usage**:
+1. Upload `Pump_Qwiic_I2C_Scanner.ino` to ESP32-POE-ISO
+2. Open Serial Monitor at 115200 baud
+3. Scanner runs continuously, reporting found devices every 5 seconds
+4. Compare results to expected addresses:
+   - `Pump_Safety_client.ino` expects: `0x18`, `0x19`, `0x09`
+
+**Example output**:
+```
+========================================
+  Qwiic I2C Address Scanner
+  Scanning for devices...
+========================================
+
+Scanning I2C bus (0x07-0x78)...
+
+  [FOUND] Device at address 0x18
+  [FOUND] Device at address 0x09
+
+Total devices found: 2
+
+WARNING: No device at expected 0x19 - relay may have EEPROM issue
+```
+
+**Troubleshooting**:
+- If a relay is not found at its expected address, see **EEPROM Address Configuration** below
+- If *no* devices are found, check power and Qwiic cable connections
+
+### EEPROM Address Configuration
+
+SparkFun Qwiic Relays store their I²C address in EEPROM, which persists across power cycles. If a relay is missing from the scanner output or at an unexpected address:
+
+1. **Identify the actual address** using the scanner (if device responds at all)
+2. **Reprogram EEPROM** to the expected address:
+3. Upload the sketch, monitor serial output, then reboot the ESP32
+4. Run scanner again to verify new address
+
 ## Troubleshooting
 
 ### Connection Issues
@@ -93,7 +138,12 @@ See [Python API Documentation](../iot_mqtt/README.md) for complete usage example
 - **MQTT connection fails**: Verify broker is running and credentials match ACL configuration
 
 ### Hardware Issues  
-- **I²C not found**: Run I²C scanner; ensure Qwiic cable is properly seated; default address is `0x6D`
+- **Relay not detected (e.g., "0x19 NOT FOUND")**: 
+    - Run `Pump_Qwiic_I2C_Scanner.ino` to find actual address
+    - Reprogram EEPROM address if needed
+    - ADR solder jumper may need to be connected
+        - For Single Relay: connect ADR jumper to set to `0x19`
+        - By default, Single Relay is `0x18` with ADR open
 - **Pump doesn't run**: Confirm external power supply, correct wiring to NO/COM contacts
 - **Relay clicking but no pump**: Check flyback diodes for inductive loads
 
