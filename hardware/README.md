@@ -56,10 +56,9 @@ The tower supports multiple **interchangeable modules** that stack on top of the
 - **Power**: 12VDC distributed from main power tower
 - **Control**: 3-channel pump control via Qwiic relays
 
-#### Ultrasonic Module (3-Plate Design)
-- **Plate 1**: 1 ultrasonic driver board (120W)
-- **Plate 2**: 1 ultrasonic driver board (120W) 
-- **Plate 3**: 120VAC power input + ESP32 + Qwiic relays
+#### Ultrasonic Module (1-Plate Design + 2 Driver Board in Shielded Box)
+- **Plate 1**: 120VAC power input + ESP32 + Qwiic relays
+- **Shielded Box**: 2 ultrasonic driver boards (120W)
 - **Power**: 120VAC distributed from main power tower
 - **Control**: 2-channel ultrasonic driver control
 
