@@ -43,7 +43,7 @@
 const char* MQTT_BROKER_IP = "192.168.0.100";
 const uint16_t MQTT_PORT   = 1883;
 const char* MQTT_USER      = "heat1";
-const char* MQTT_PASS      = "heat";
+const char* MQTT_PASS      = "controller";
 const char* DEV_BASE       = "heat/01";
 
 /************ Controller supervision ************/
@@ -493,6 +493,15 @@ void setup() {
   WiFi.onEvent(onNetEvent);
   Serial.println("[ETH] Bringing up Ethernet...");
   ETH.begin(ETH_PHY_TYPE, ETH_PHY_ADDR, ETH_PHY_MDC, ETH_PHY_MDIO, ETH_POWER_PIN, ETH_CLK_MODE);
+
+  // Static IP (same subnet as broker)
+  ETH.config(
+    IPAddress(192,168,0,50),   // ESP32 IP
+    IPAddress(192,168,0,1),    // Gateway (optional if no router)
+    IPAddress(255,255,255,0),  // Netmask
+    IPAddress(192,168,0,1),    // DNS1 
+    IPAddress(8,8,8,8)         // DNS2
+  );
 
   // Start OFF + init arrays
   for (uint8_t i = 1; i <= HEATER_COUNT; i++) {

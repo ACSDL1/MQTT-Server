@@ -28,6 +28,8 @@ ESP32-POE-ISO nodes control DC peristaltic pumps via **SparkFun Qwiic Relay** mo
 
 ## MQTT
 
+**IP Address**: 192.168.0.52
+
 **Base**: `pumps/01`
 
 **Topics**

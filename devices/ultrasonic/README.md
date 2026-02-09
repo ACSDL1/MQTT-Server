@@ -27,6 +27,8 @@ ESP32-POE-ISO nodes control ultrasonic cleaning drivers via **SparkFun Qwiic Rel
 
 ## MQTT
 
+**IP Address**: 192.168.0.51
+
 **Base**: `ultra/01`
 
 | Topic                |   Dir  | Example Payload                 | Notes                 |

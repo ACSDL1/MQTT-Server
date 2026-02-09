@@ -42,6 +42,8 @@ ESP32-POE-ISO nodes control heating elements via **SparkFun Qwiic Dual Solid Sta
 
 ## MQTT
 
+**IP Address**: 192.168.0.50
+
 **Base**: `heat/01`
 
 | Topic                |   Dir  | Example Payload                                                                 | Notes                 |

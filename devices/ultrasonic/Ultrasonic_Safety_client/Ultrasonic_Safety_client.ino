@@ -26,7 +26,7 @@
 const char* MQTT_BROKER_IP   = "192.168.0.100";   // your laptop/broker IP
 const uint16_t MQTT_PORT     = 1883;
 const char* MQTT_USER        = "ultra1";
-const char* MQTT_PASS        = "ultra";
+const char* MQTT_PASS        = "controller";
 const char* DEV_BASE         = "ultra/01";
 
 /************ Controller supervision ************/
@@ -332,6 +332,15 @@ void setup() {
   WiFi.onEvent(onNetEvent);
   Serial.println("[ETH] Initializing Ethernet...");
   ETH.begin(ETH_PHY_TYPE, ETH_PHY_ADDR, ETH_PHY_MDC, ETH_PHY_MDIO, ETH_POWER_PIN, ETH_CLK_MODE);
+
+  // Static IP (same subnet as broker)
+  ETH.config(
+    IPAddress(192,168,0,51),   // ESP32 IP
+    IPAddress(192,168,0,1),    // Gateway (optional if no router)
+    IPAddress(255,255,255,0),  // Netmask
+    IPAddress(192,168,0,1),    // DNS1 
+    IPAddress(8,8,8,8)         // DNS2
+  );
 
   // Try to initialize relays (won’t fail boot if one is missing)
   relay1_ok = relay1.begin();

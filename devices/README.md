@@ -10,6 +10,19 @@ The Arduino CLI method is recommended for better version control and automation,
 
 ESP32-based modules (Olimex ESP32-POE-ISO).
 
+## Networking
+- Host: running MQTT broker (Mosquitto) and Python controller script
+	- set IPv4 address: 192.168.100.1
+- ESP32 devices: connect to MQTT broker over Wi-Fi or Ethernet (depending on module)
+
+### Modules
+- Heater Module
+	- 192.168.0.50
+- Ultrasonic Module
+	- 192.168.0.51
+- Pump Module
+	- 192.168.0.52
+
 ## Workflow
 
 ### Arduino CLI
