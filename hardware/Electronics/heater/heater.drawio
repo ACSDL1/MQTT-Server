@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="_u4sdYA65X_yvstqMG25" name="Page-1">
-        <mxGraphModel dx="701" dy="297" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1169" dy="681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -37,18 +37,23 @@
                 <mxCell id="14" value="thermistors&lt;div&gt;numbered 0-3&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="780" y="630" width="130" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="urrent" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
-                    <mxGeometry width="80" relative="1" as="geometry">
-                        <mxPoint x="1190" y="720" as="sourcePoint"/>
-                        <mxPoint x="1270" y="720" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="17" value="10kΩ" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;strokeColor=#FFFFFF;" vertex="1" parent="1">
+                <mxCell id="17" value="10kΩ" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;strokeColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="140" y="380" width="40" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="10kΩ" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;strokeColor=#FFFFFF;" vertex="1" parent="1">
+                <mxCell id="18" value="10kΩ" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;strokeColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="20" y="380" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;b&gt;Ethernet connect to network switch&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1450" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;b&gt;microUSB port to view serial monitor&lt;br&gt;(debugging)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1500" y="600" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="120VAC" style="shape=tape;whiteSpace=wrap;html=1;fillColor=#FFEF26;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="690" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="WAGO 221-413 Lever-Nuts" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fillColor=#FF7322;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="880" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
